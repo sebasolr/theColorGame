@@ -3,10 +3,10 @@ let colors = ['rgb(255, 87, 51)', 'rgb(255, 177, 51)', 'rgb(122, 230, 41) ', 'rg
 const squares = document.querySelectorAll('.squares');
 let container = document.querySelector('.container');
 const pickedColor = pickColor();
-let span = document.querySelector('.colorDisplay')
-span.innerHTML=pickedColor;
 //Cambio de color en etiquetas
 
+let span = document.querySelector('.colorDisplay')
+span.innerHTML=pickedColor;
 for(let i = 0; i < squares.length; i++) {
     if (colors[i]) {
       squares[i].style.background = colors[i];
