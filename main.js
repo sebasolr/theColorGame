@@ -1,12 +1,11 @@
 //variables globales
-let colors = ['rgb(255, 87, 51)', 'rgb(255, 177, 51)', 'rgb(122, 230, 41) ', 'rgb(30, 196, 113)', 'rgb(45, 101, 190)', 'rgb(171, 45, 190)'];
+let colors =rellenarArray() ;
 const squares = document.querySelectorAll('.squares');
 let container = document.querySelector('.container');
 const pickedColor = pickColor();
-//Cambio de color en etiquetas
-
 let span = document.querySelector('.colorDisplay')
 span.innerHTML=pickedColor;
+//Cambio de color en etiquetas
 for(let i = 0; i < squares.length; i++) {
     if (colors[i]) {
       squares[i].style.background = colors[i];
@@ -14,25 +13,21 @@ for(let i = 0; i < squares.length; i++) {
       squares[i].style.display = "none";
     }
   }
-
-
-
-
+//clicker cuando el color es = al colorcliker  
 for (let i = 0; i <= 5; i++) {
-    
     squares[i].style.backgroundColor = colors[i]
+    //evento click
     squares[i].addEventListener("click", function() {
     //toma el  color de squares
-    let clickedColor = this.style.background;
+      let clickedColor = this.style.background;
     //compara el color con pickedColor
-    if (clickedColor === pickedColor) {
-      changeColors(clickedColor);
-    }else{
-      this.style.background = "#232323";
-    }
-  })
+        if (clickedColor === pickedColor) {
+          changeColors(clickedColor);
+        }else{
+          this.style.background = "#232323";
+        }
+    })
 }
-
 //funciones
 
 // cambiar color
@@ -43,12 +38,25 @@ function changeColors(color){
       squares[i].style.background = color;
   }
  //color random 
-  }
-  function pickColor(){
-    var random = Math.floor(Math.random() * colors.length)
+}
+function pickColor(){
+    let random = Math.floor(Math.random() * colors.length)
     return colors[random];
-    }
+}
 // funcion de crear codigo rgb random aqui
 
+function randomColor (){
+  
+    let r = Math.floor(Math.random()*256)
+    let g = Math.floor(Math.random()*256)
+    let b = Math.floor(Math.random()*256)
+   return  'rgb'+'('+r+','+g+','+b+')'
+}
 
-
+function rellenarArray(){
+    let colors=[];
+    for(let i=0; i<=5;i++){
+      colors.push(randomColor())
+  }
+return colors
+}
