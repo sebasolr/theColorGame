@@ -46,18 +46,26 @@ levelhard.addEventListener('click', function () {
     
   }
 })
-
+//le asigna los colores y posiciones a los cuadrados
+for(let i = 0; i < cantidadColores; i++) {
+  if (colors[i]) {
+    squares[i].style.background = colors[i];
+  } else {
+    squares[i].style.display = "none";
+  }
+}
 //clicker cuando el color es = al colorcliker  
 for (let i = 0; i <= 5; i++) {
   squares[i].style.backgroundColor = colors[i]
   //evento click
   squares[i].addEventListener("click", function () {
     //toma el  color de squares
-    const clickedColor = this.style.background;
+    let clickedColor = this.style.background;
     //compara el color con pickedColor
-    if (clickedColor == pickedColor) {
+    if (clickedColor === pickedColor) {
       changeColors(clickedColor);
       mensaje.innerHTML = "¡Correcto!"
+      console.log(clickedColor)
     } else {
       this.style.background = "#232323";
       mensaje.innerHTML = "intentalo nuevamente!"
