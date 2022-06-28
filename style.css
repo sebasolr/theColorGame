@@ -16,7 +16,13 @@ h1{
     color: #ffffff;
     height: 30px;
     text-align: center;
-    margin: 30px auto;
+    margin: 100px auto;
+
+}
+
+#stripe :hover{
+    background-color: #ff0000;
+
 }
 .mensaje{
     text-align: center;
@@ -43,3 +49,4 @@ h1{
     padding-bottom: 30%;
     margin: 1rem;
 }
+
