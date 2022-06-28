@@ -1,15 +1,16 @@
 //variables globales
-let cantidadColores = 6;
-let colors = generateRandomColors(cantidadColores);
+let numberOfSquares = 6;
+let colors = generateRandomColors(numberOfSquares);
 const squares = document.querySelectorAll('.squares');
 let container = document.querySelector('.container');
 let pickedColor = pickColor();
 let span = document.querySelector('.colorDisplay');
 span.innerHTML = pickedColor;
-let mensaje = document.querySelector('.mensaje');
+let mensaje = document.querySelector('#message');
 let boton = document.querySelector('#reset');
 let levelhard = document.querySelector('#hard');
 let leveleasy = document.querySelector('#easy');
+let h1= document.querySelector('h1')
 //boton reset
 boton.addEventListener('click', function () {
   window.location.reload()
@@ -18,8 +19,8 @@ boton.addEventListener('click', function () {
 leveleasy.addEventListener('click', function () {
   leveleasy.classList.add('selected');
   levelhard.classList.remove('selected');  
-  cantidadColores = 3;
-  colors = generateRandomColors(cantidadColores);
+  numberOfSquares = 3;
+  colors = generateRandomColors(numberOfSquares);
   pickedColor = pickColor();
   span.innerHTML = pickedColor;
   for (let i = 0; i < squares.length; i++) {
@@ -34,8 +35,8 @@ leveleasy.addEventListener('click', function () {
 levelhard.addEventListener('click', function () {
   levelhard.classList.add('selected');
   leveleasy.classList.remove('selected');
-  cantidadColores = 6;  
-  colors = generateRandomColors(cantidadColores);
+  numberOfSquares = 6;  
+  colors = generateRandomColors(numberOfSquares);
   pickedColor = pickColor();
   span.innerHTML = pickedColor;
   for (let i = 0; i <squares.length ; i++) {
@@ -47,7 +48,7 @@ levelhard.addEventListener('click', function () {
   }
 })
 //le asigna los colores y posiciones a los cuadrados
-for(let i = 0; i < cantidadColores; i++) {
+for(let i = 0; i < numberOfSquares; i++) {
   if (colors[i]) {
     squares[i].style.background = colors[i];
   } else {
@@ -64,12 +65,14 @@ for (let i = 0; i <= 5; i++) {
     //compara el color con pickedColor
     if (clickedColor === pickedColor) {
       changeColors(clickedColor);
+      h1.style.color= clickedColor;
       mensaje.innerHTML = "¡Correcto!"
+      reset.innerHTML = 'Play Again?'
+
       console.log(clickedColor)
     } else {
       this.style.background = "#232323";
-      mensaje.innerHTML = "intentalo nuevamente!"
-      reset.innerHTML = 'Play Again?'
+      mensaje.innerHTML = "Intentalo nuevamente!"
     } console.log(clickedColor)
   })
 }
@@ -78,7 +81,7 @@ for (let i = 0; i <= 5; i++) {
 // cambiar color
 function changeColors(color) {
   //repetir en todos los squares
-  for (let i = 0; i < cantidadColores; i++) {
+  for (let i = 0; i < numberOfSquares; i++) {
     //cambiar el color de los squares
     squares[i].style.background = color;
   }
@@ -100,7 +103,7 @@ function randomColor() {
 
 function generateRandomColors() {
   let colors = [];
-  for (let i = 0; i < cantidadColores; i++) {
+  for (let i = 0; i < numberOfSquares; i++) {
     colors.push(randomColor())
   }
   return colors

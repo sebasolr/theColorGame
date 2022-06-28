@@ -1,7 +1,9 @@
-body{
-    background-color: #232323
+body {
+    background-color: #232323;
+    font-family: Poppins;
 }
-h1{
+
+h1 {
     display: flex;
     font-size: 50px;
     color: #ffffff;
@@ -10,31 +12,59 @@ h1{
     gap: 5px;
     height: 150px;
 }
-#stripe{
-    display: block;
-    width: 100px;
+
+#stripe {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
     color: #ffffff;
     height: 30px;
     text-align: center;
-    margin: 100px auto;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+button:hover {
+    background-color: rgb(64, 145, 117);
 
 }
 
-#stripe :hover{
-    background-color: #ff0000;
-
+button {
+    font-family: Poppins;
+    border: none;
+    height: 100%;
+    font-size: 15px;
 }
-.mensaje{
+
+#reset {
+    width: 20%;
+    float: left;
+}
+
+#easy,
+#hard {
+    width: 10%;
+}
+
+.selected {
+    background-color: rgb(64, 145, 117);
+}
+
+#message {
     text-align: center;
-    display: block;
-    font-size: 20px;
-    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    color: #000;
+    width: 60%
 }
-.colorDisplay{
-    color: #ff0000;
+
+.colorDisplay {
+    color: #f7fa50;
     margin: 0 15px;
 }
-.container{
+
+.container {
     display: flex;
     flex-wrap: wrap;
     width: 600px;
@@ -42,11 +72,20 @@ h1{
     margin: 0 auto;
     justify-content: center;
 }
-.squares{
+
+.squares {
     float: left;
-    width: 30%;
+    width: 28%;
     height: 0;
     padding-bottom: 30%;
     margin: 1rem;
+    border-radius: 50%;
+    transition: background-color 0.5s;
 }
 
+footer{
+    font-size: 12px;
+    color: #ffffff;
+    background-color: #191919;
+    text-align: center;
+}
