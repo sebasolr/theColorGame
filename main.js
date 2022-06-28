@@ -1,15 +1,23 @@
 //variables globales
-let cantidadColores = 6;
-let colors =rellenarArray(cantidadColores) ;
+let cantidadColores = 3;
+let colors =rellenarArray(cantidadColores);
 const squares = document.querySelectorAll('.squares');
 let container = document.querySelector('.container');
 const pickedColor = pickColor();
-let span = document.querySelector('.colorDisplay')
+let span = document.querySelector('.colorDisplay');
 span.innerHTML=pickedColor;
-let mensaje = document.querySelector('.mensaje')
+let mensaje = document.querySelector('.mensaje');
+let boton=document.querySelector('#reset');
+let level2=document.querySelector('#level2');
 //boton reset
 
-
+boton.addEventListener('click',function(){
+  window.location.reload()
+})
+//boton level
+level2.addEventListener('click',function(){
+  
+})
 //Cambio de color en etiquetas
 for(let i = 0; i < cantidadColores; i++) {
   if (colors[i]) {
@@ -57,7 +65,7 @@ function randomColor (){
     let r = Math.floor(Math.random()*256)
     let g = Math.floor(Math.random()*256)
     let b = Math.floor(Math.random()*256)
-   return  'rgb'+'('+r+', '+g+', '+b+')'
+    return  'rgb'+'('+r+', '+g+', '+b+')'
 }
 
 function rellenarArray(){
