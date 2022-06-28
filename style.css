@@ -10,14 +10,31 @@ h1{
     gap: 5px;
     height: 150px;
 }
+#stripe{
+    display: block;
+    width: 100px;
+    color: #ffffff;
+    height: 30px;
+    text-align: center;
+    margin: 30px auto;
+}
+.mensaje{
+    text-align: center;
+    display: block;
+    font-size: 20px;
+    color: #ffffff;
+}
 .colorDisplay{
     color: #ff0000;
     margin: 0 15px;
 }
 .container{
+    display: flex;
+    flex-wrap: wrap;
     width: 600px;
     text-align: center;
     margin: 0 auto;
+    justify-content: center;
 }
 .squares{
     float: left;
